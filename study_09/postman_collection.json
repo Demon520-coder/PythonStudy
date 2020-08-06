@@ -1,0 +1,165 @@
+{
+	"info": {
+		"name": "松勤-固定值",
+		"_postman_id": "40fff16d-f8d8-1996-8e62-71634ec9fa30",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get_token-固定值",
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"id": "bf6d98d9-aa78-416d-a6d3-933dda591b05",
+						"type": "text/javascript",
+						"exec": [
+							"",
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"id": "0b8860cf-e441-4f2b-9cd0-c491e6cd5945",
+						"type": "text/javascript",
+						"exec": [
+							"// 正确写法",
+							"",
+							"var jsonData =pm.response.json();",
+							"// 设置环境变量token，并把jsonData.token传给它",
+							"pm.environment.set(\"token\",jsonData.token);  ",
+							"",
+							"// 可以通过控制台检查输出是否正确；view-show postmanconsole打开控制台，运行脚本，查看输出结果",
+							"console.log(jsonData.token)",
+							"",
+							"// token=jsonData.token     #设置变量token",
+							"// pm.variables.get(\"token\");    #获取变量token的值",
+							"",
+							"",
+							"// 另一种写法",
+							"// var data =JSON.parse(responseBody);",
+							"// pm.environment.set(\"token\",data.token);",
+							"// console.log(data.token)",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							"",
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"userName\":\"J201903070064\",\r\n\t\"password\":\"362387359\"\r\n}\r\n\r\n\r\n\r\n"
+				},
+				"url": {
+					"raw": "http://47.96.181.17:9090//rest/toController",
+					"protocol": "http",
+					"host": [
+						"47",
+						"96",
+						"181",
+						"17"
+					],
+					"port": "9090",
+					"path": [
+						"",
+						"rest",
+						"toController"
+					]
+				},
+				"description": ""
+			},
+			"response": []
+		},
+		{
+			"name": "add_user",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "c50c1204-a05f-47f1-bbc8-f67c91ca3919",
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-AUTH-TOKEN",
+						"value": "{{token}}"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n\t\"aac003\":\"李三\",\r\n\t\"aac004\":\"1\",\r\n\t\"aac011\":\"21\",\r\n\t\"aac030\":\"14510386589\",\r\n\t\"aac01u\":\"88002255\",\r\n\t\"crm003\":\"1\",\r\n\t\"crm004\":\"1\",\r\n\t\"crm00a\":\"2018-11-11\",\r\n\t\"crm00b\":\"aaaaaa\",\r\n\t\"crm00c\":\"2019-02-28\",\r\n\t\"crm00d\":\"bbbbbb\"\r\n}"
+				},
+				"url": {
+					"raw": "http://47.96.181.17:9090/rest/ac01CrmController",
+					"protocol": "http",
+					"host": [
+						"47",
+						"96",
+						"181",
+						"17"
+					],
+					"port": "9090",
+					"path": [
+						"rest",
+						"ac01CrmController"
+					]
+				},
+				"description": "新增用户"
+			},
+			"response": []
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"id": "9998557b-9df3-47bb-bc3c-dd0dc058af6a",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"id": "fceea3ec-b8b0-44f1-9162-5916f7514c71",
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	]
+}
