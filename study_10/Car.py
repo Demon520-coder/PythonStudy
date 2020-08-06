@@ -51,6 +51,7 @@ class ElectricCar(Car):
     def increase_oil(self,oil):
         print('sorry,there is no oil for ElectricCar')
         
+        
     def display(self):
         self.battery.display_size()        
 
